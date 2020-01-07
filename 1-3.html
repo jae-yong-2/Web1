@@ -4,18 +4,56 @@
     <title>안녕하세요!</title>
   </head>
   <body>
+    //today lean -> if, var target
       <h1>1-3코드</h1>
       <h2>JavaScrpit</h2>
       <input type="button" value="night" onclick="
-      document.querySelector('body').style.backgroundColor='black';
-      document.querySelector('body').style.color='white';">
+        document.querySelector('body').style.backgroundColor='black';
+        document.querySelector('body').style.color='white';
+        document.querySelector('#night_day').value='to day';
+        ">
       <input type="button" value="day" onclick="
-      document.querySelector('body').style.backgroundColor='white';
-      document.querySelector('body').style.color='black';">
+        document.querySelector('body').style.backgroundColor='white';
+        document.querySelector('body').style.color='black';
+        document.querySelector('#night_day').value='to night';
+        ">
       <h2>Comparison operator & Boolean</h2>
       <br>what is 1===1 ?
       <script>
-      document.write(1===1);
+        document.write(1===1);
       </script>
+
+        <br>what is 1>2?
+
+      <script>
+        document.write(1>2);
+      </script>
+        <h2>Conditional statements</h2>
+        <h3>IF</h3>
+      <input id="night_day" type="button" value="to night" onclick="
+      var target= document.querySelector('body');
+      if(target.style.backgroundColor==='white'){
+        target.style.backgroundColor='black';
+        target.style.color='white';
+        this.value='to day';
+      }else{
+        this.value='to night';
+        target.style.backgroundColor='white';
+        target.style.color='black';
+      }
+      ">
+      <ol>
+        <li><a href="1-1.html"> JavaScrpit1</a></li>
+        <li><a href="1-1.html"> JavaScrpit1</a></li>
+        <li><a href="1-1.html"> JavaScrpit1</a></li>
+      </ol>
+      <input type="button" value = "link color" onclick="
+      var alist =document.querySelectorAll('a');
+      var i=0;
+      while(i<alist.length){
+        alist[i].href="1-2.html";
+        i++;
+      }
+      ">
   <body>
 </html>
