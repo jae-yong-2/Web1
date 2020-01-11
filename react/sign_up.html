@@ -1,0 +1,71 @@
+<html>
+  <head>
+    <meta charset="uft-8"/>
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js">
+    </script>
+
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js">
+    </script>
+
+    <script crossorigin src="https://unpkg.com/babel-standalone@6/babel.min.js">
+    </script>
+  </head>
+  <body>
+
+
+    <div id="sign_up"></div>
+    <script type ="text/babel">
+      class Sign_up extends React.Component{
+        constructor(props){
+          super(props);
+          this.state={
+            check:'입력하세요',
+            insertID: '',
+            insertPW: '',
+            checkID:[],
+            checkPW:[],
+          };
+        }
+        insert =(e)=>{
+          e.preventDefault();
+          if(this.state.insertID.length < 9 || this.state.insertPW.length<8){
+              if(this.state.insertID.length < 9){
+                alert('학번을 다시입력하세요!');
+              }else if(this.state.insertPW.length<8){
+                alert('비밀번호를 다시입력하세요!');
+              }
+          }
+          else{
+            this.setState({
+              checkID:this.state.checkID.concat(this.state.insertID),
+              checkPW:this.state.checkID.concat(this.state.insertPW),
+            })
+          }
+        }
+        render(){
+          return (
+          <div>
+            <form>
+              <div>
+                {'학   번'}
+                <input type= "text"  value ={this.state.insertID} onChange={(e)=>{this.setState({insertID: e.target.value })}}/>
+                <button onClick={this.insert}>회원가입</button>
+              </div>
+
+                <div>
+                {'비밀번호'}
+                <input type= "text" value ={this.state.insertPW} onChange={(e)=>{this.setState({insertPW: e.target.value })}}/>
+              </div>
+            </form>
+            <div>{this.state.checkID}</div><div>{this.state.checkPW}</div>
+          </div>
+          );
+        }
+      }
+      </script>
+      <script type="text/babel">
+        ReactDOM.render(<Sign_up/>,document.querySelector('#sign_up'));
+      </script>
+
+  </body>
+</html>
